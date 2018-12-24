@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049FCB6621D175400061CA4F /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FCB6521D175400061CA4F /* ProductDetailsViewController.swift */; };
 		04ECB53521D12BE0003A6448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB53421D12BE0003A6448 /* AppDelegate.swift */; };
 		04ECB53721D12BE0003A6448 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ECB53621D12BE0003A6448 /* ProductListViewController.swift */; };
 		04ECB53A21D12BE0003A6448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53821D12BE0003A6448 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049FCB6521D175400061CA4F /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		04ECB53121D12BE0003A6448 /* Sams Products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sams Products.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ECB53421D12BE0003A6448 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ECB53621D12BE0003A6448 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				04ECB53621D12BE0003A6448 /* ProductListViewController.swift */,
+				049FCB6521D175400061CA4F /* ProductDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049FCB6621D175400061CA4F /* ProductDetailsViewController.swift in Sources */,
 				04ECB53721D12BE0003A6448 /* ProductListViewController.swift in Sources */,
 				04ECB53521D12BE0003A6448 /* AppDelegate.swift in Sources */,
 			);
