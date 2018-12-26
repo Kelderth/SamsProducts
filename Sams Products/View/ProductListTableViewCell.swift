@@ -13,7 +13,6 @@ class ProductListTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var shortDescriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var inStockLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -21,7 +20,6 @@ class ProductListTableViewCell: UITableViewCell {
     // MARK: - Functions
     func setup(product: Product) {
         self.nameLabel.text = product.productName
-        self.shortDescriptionLabel.text = ""
         self.ratingLabel.text = "Rating: \(String(format: "%.1f", product.reviewRating))"
         self.inStockLabel.text = product.inStock ? "In stock" : "Not available"
         self.priceLabel.text = product.price
