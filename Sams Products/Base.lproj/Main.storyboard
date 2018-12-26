@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" rowHeight="120" id="iHD-1I-Zu4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" rowHeight="120" id="iHD-1I-Zu4" customClass="ProductListTableViewCell" customModule="Sams_Products" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iHD-1I-Zu4" id="EIu-zv-Axt">
@@ -40,32 +40,32 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-Gx-g9F">
                                                     <rect key="frame" x="125" y="5" width="240" height="104.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Y-EY-NCG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Y-EY-NCG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lam-v9-yyJ">
-                                                            <rect key="frame" x="0.0" y="29" width="240" height="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lam-v9-yyJ">
+                                                            <rect key="frame" x="0.0" y="27" width="240" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qEk-lX-iK1">
-                                                            <rect key="frame" x="0.0" y="53" width="240" height="51.5"/>
+                                                            <rect key="frame" x="0.0" y="51.5" width="240" height="53"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O3L-fl-gkR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="51.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="53"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdv-eJ-1xe">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="21.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="22.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTM-GB-QGY">
-                                                                            <rect key="frame" x="0.0" y="29.5" width="116" height="22"/>
+                                                                            <rect key="frame" x="0.0" y="30.5" width="116" height="22.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM0-oW-sMY">
-                                                                    <rect key="frame" x="124" y="0.0" width="116" height="51.5"/>
+                                                                    <rect key="frame" x="124" y="0.0" width="116" height="53"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                                     <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -92,6 +92,14 @@
                                                 <constraint firstItem="ogK-cy-IFI" firstAttribute="leading" secondItem="EIu-zv-Axt" secondAttribute="leading" constant="5" id="txt-zm-hrd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="inStockLabel" destination="tTM-GB-QGY" id="tzx-3H-QXa"/>
+                                            <outlet property="nameLabel" destination="X2Y-EY-NCG" id="LSq-V1-Yhl"/>
+                                            <outlet property="priceLabel" destination="TM0-oW-sMY" id="PIf-ZW-oQq"/>
+                                            <outlet property="productImageView" destination="ogK-cy-IFI" id="Ioq-dk-OTy"/>
+                                            <outlet property="ratingLabel" destination="vdv-eJ-1xe" id="xd2-ln-fJA"/>
+                                            <outlet property="shortDescriptionLabel" destination="lam-v9-yyJ" id="OpZ-4w-eAe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
