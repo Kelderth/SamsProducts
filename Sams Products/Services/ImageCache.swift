@@ -13,7 +13,7 @@ class ImageCache {
     private let assetCache = NSCache<NSString, UIImage>()
     
     static let shared = ImageCache()
-    
+        
     private init() {}
     
     func saveAssetImageToCache(identifier: String, image: UIImage) {

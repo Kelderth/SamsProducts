@@ -9,6 +9,9 @@
 import UIKit
 
 class ProductListTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    let showImage = ShowImage()
 
     // MARK: - Outlets
     @IBOutlet weak var productImageView: UIImageView!
@@ -26,31 +29,37 @@ class ProductListTableViewCell: UITableViewCell {
         
         let imageURLString = NetworkService.shared.urlApiCall + product.productImage
         
-        if let image = ImageCache.shared.getAssetImageFromCache(identifier: imageURLString) {
-            self.productImageView.image = image
-        } else {
-            do {
-                if let imageURL = URL(string: imageURLString) {
-                    let imageData = try Data(contentsOf: imageURL)
-                    
-                    if let image = UIImage(data: imageData) {
-                        ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
-                        DispatchQueue.main.async {
-                            self.productImageView.image = image
-                        }
-                    }
-                }
-            } catch let error {
-                print("Error fetching image - \(error.localizedDescription)")
-                NSLog("Error fetching image - \(error.localizedDescription)")
-            }
-        }
+        productImageView.image = showImage.getImage(imageURLString: imageURLString)
+        //getImage(imageURLString: imageURLString)
     }
+    
+//    func getImage(imageURLString: String) {
+//        if let image = ImageCache.shared.getAssetImageFromCache(identifier: imageURLString) {
+//            print("Presenting Image: ", image)
+//            self.productImageView.image = image
+//        } else {
+//            do {
+//                if let imageURL = URL(string: imageURLString) {
+//                    let imageData = try Data(contentsOf: imageURL)
+//
+//                    if let image = UIImage(data: imageData) {
+//                        ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
+//                        DispatchQueue.main.async {
+//                            self.productImageView.image = image
+//                        }
+//                    }
+//                }
+//            } catch let error {
+//                print("Error fetching image - \(error.localizedDescription)")
+//                NSLog("Error fetching image - \(error.localizedDescription)")
+//            }
+//        }
+//    }
 
-    override func prepareForReuse() {
-        self.productImageView.image = nil
-        super.prepareForReuse()
-    }
+//    override func prepareForReuse() {
+//        self.productImageView.image = nil
+//        super.prepareForReuse()
+//    }
     
     
 

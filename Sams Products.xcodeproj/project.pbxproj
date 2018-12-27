@@ -19,6 +19,7 @@
 		04ECB53A21D12BE0003A6448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53821D12BE0003A6448 /* Main.storyboard */; };
 		04ECB53C21D12BE4003A6448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53B21D12BE4003A6448 /* Assets.xcassets */; };
 		04ECB53F21D12BE4003A6448 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53D21D12BE4003A6448 /* LaunchScreen.storyboard */; };
+		04F5E41B21D46DEF0022712D /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5E41A21D46DEF0022712D /* ShowImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		04ECB53B21D12BE4003A6448 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04ECB53E21D12BE4003A6448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04ECB54021D12BE4003A6448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F5E41A21D46DEF0022712D /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				04090F3C21D2C20D00BBE7DE /* NetworkService.swift */,
 				04090F3E21D2FC8A00BBE7DE /* HtmlToSwiftExtension.swift */,
 				04090F4021D32E9B00BBE7DE /* ImageCache.swift */,
+				04F5E41A21D46DEF0022712D /* ShowImage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				04090F4121D32E9B00BBE7DE /* ImageCache.swift in Sources */,
 				049FCB6B21D197590061CA4F /* Product.swift in Sources */,
 				04ECB53721D12BE0003A6448 /* ProductListViewController.swift in Sources */,
+				04F5E41B21D46DEF0022712D /* ShowImage.swift in Sources */,
 				04ECB53521D12BE0003A6448 /* AppDelegate.swift in Sources */,
 				049FCB6E21D2B8EF0061CA4F /* ProductListTableViewCell.swift in Sources */,
 				04090F3D21D2C20D00BBE7DE /* NetworkService.swift in Sources */,
