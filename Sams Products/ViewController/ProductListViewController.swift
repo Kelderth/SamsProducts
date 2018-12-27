@@ -32,7 +32,6 @@ class ProductListViewController: UIViewController {
     }
     
     //MARK: - Functions
-    
     func updateView() {
         
         NetworkService.shared.fetchData(pageNumber: self.productPage + 1, pageSize: 10, completion: { productContainer in
@@ -60,7 +59,6 @@ class ProductListViewController: UIViewController {
 }
 
 // MARK: - Extensions
-
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productSource.count

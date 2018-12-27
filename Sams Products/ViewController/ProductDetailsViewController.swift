@@ -16,7 +16,6 @@ class ProductDetailsViewController: UIViewController {
     let showImage = ShowImage()
     var productSource: [Product] = [Product]()
 
-    
     // MARK: - Outlets
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
@@ -27,21 +26,24 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var inStockLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        
-        print("Quantity of Products: ", productSource.count)
     }
     
     // MARK: - Functions
-    
     func setupView() {
         
         guard let productDetails = product else { return }
+        
+        feedLabel(productDetails: productDetails)
+    }
+    
+    func feedLabel(productDetails: Product){
         
         productNameLabel.text = productDetails.productName
         longDescriptionLabel.text = productDetails.longDescription.htmlToString
@@ -53,33 +55,39 @@ class ProductDetailsViewController: UIViewController {
         priceLabel.text = productDetails.price
         
         let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
-
+        
         productImageView.image = showImage.getImage(imageURLString: imageURLString)
     }
     
-    
     @IBAction func nextProduct(_ sender: UIButton) {
         
+        if productIndex >= productSource.count - 1 {
+            nextButton.isEnabled = false
+            return
+        }
+        
+        previousButton.isEnabled = true
         productIndex += 1
-        
-        let example = productSource[productIndex].productName
-        productNameLabel.text = example
-        
-//        let alert = UIAlertController(title: "Products Navigation", message: "Would you like to continue?", preferredStyle: .alert)
-//        let alertAction = UIAlertAction(title: "Next Product Index: \(productIndex)", style: .default, handler: nil)
-//        alert.addAction(alertAction)
-//        self.present(alert, animated: true)
-        
+            
+        let itemSource = productSource[productIndex]
+            
+        feedLabel(productDetails: itemSource)
     }
     
     @IBAction func previousProduct(_ sender: UIButton) {
         
+        if productIndex <= 0 {
+            previousButton.isEnabled = false
+            return
+        }
+        
+        nextButton.isEnabled = true
+        
         productIndex -= 1
         
-//        let alert = UIAlertController(title: "Product Navigation", message: "Would you like to continue?", preferredStyle: .alert)
-//        let alertAction = UIAlertAction(title: "Previous Product Index: \(productIndex)", style: .default, handler: nil)
-//        alert.addAction(alertAction)
-//        self.present(alert, animated: true)
+        let itemSource = productSource[productIndex]
+        
+        feedLabel(productDetails: itemSource)
     }
     
     
