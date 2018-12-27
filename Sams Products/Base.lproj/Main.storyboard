@@ -156,10 +156,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVT-WY-gNj">
                                                         <rect key="frame" x="0.0" y="0.0" width="88.5" height="50"/>
                                                         <state key="normal" title="&lt; PREVIOUS"/>
+                                                        <connections>
+                                                            <action selector="previousProduct:" destination="GDZ-y8-xlD" eventType="touchUpInside" id="imc-rh-H07"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-hS-A3b">
                                                         <rect key="frame" x="297.5" y="0.0" width="57.5" height="50"/>
                                                         <state key="normal" title="NEXT &gt;"/>
+                                                        <connections>
+                                                            <action selector="nextProduct:" destination="GDZ-y8-xlD" eventType="touchUpInside" id="Mgc-Hb-ser"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

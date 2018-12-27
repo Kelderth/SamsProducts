@@ -93,8 +93,10 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let destination = storyboard.instantiateViewController(withIdentifier: vcIdentifier) as? ProductDetailsViewController else { return }
         
         guard let productSelected = tableView.indexPathForSelectedRow?.row else { return }
-        
+                
         destination.product = productSource[productSelected]
+        destination.productIndex = productSelected
+        destination.productSource = productSource
         
         navigationController?.pushViewController(destination, animated: true)
     }

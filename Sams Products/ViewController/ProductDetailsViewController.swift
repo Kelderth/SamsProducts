@@ -12,7 +12,10 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: - Properties
     var product: Product?
+    var productIndex: Int = 0
     let showImage = ShowImage()
+    var productSource: [Product] = [Product]()
+
     
     // MARK: - Outlets
     @IBOutlet weak var productNameLabel: UILabel!
@@ -30,6 +33,8 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+        print("Quantity of Products: ", productSource.count)
     }
     
     // MARK: - Functions
@@ -50,6 +55,31 @@ class ProductDetailsViewController: UIViewController {
         let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
 
         productImageView.image = showImage.getImage(imageURLString: imageURLString)
+    }
+    
+    
+    @IBAction func nextProduct(_ sender: UIButton) {
+        
+        productIndex += 1
+        
+        let example = productSource[productIndex].productName
+        productNameLabel.text = example
+        
+//        let alert = UIAlertController(title: "Products Navigation", message: "Would you like to continue?", preferredStyle: .alert)
+//        let alertAction = UIAlertAction(title: "Next Product Index: \(productIndex)", style: .default, handler: nil)
+//        alert.addAction(alertAction)
+//        self.present(alert, animated: true)
+        
+    }
+    
+    @IBAction func previousProduct(_ sender: UIButton) {
+        
+        productIndex -= 1
+        
+//        let alert = UIAlertController(title: "Product Navigation", message: "Would you like to continue?", preferredStyle: .alert)
+//        let alertAction = UIAlertAction(title: "Previous Product Index: \(productIndex)", style: .default, handler: nil)
+//        alert.addAction(alertAction)
+//        self.present(alert, animated: true)
     }
     
     
