@@ -48,7 +48,6 @@ class NetworkService {
                 }
             }
         }.resume()
-        
     }
     
 

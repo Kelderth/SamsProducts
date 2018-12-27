@@ -32,6 +32,8 @@ class ProductDetailsViewController: UIViewController {
         setupView()
     }
     
+    // MARK: - Functions
+    
     func setupView() {
         
         guard let productDetails = product else { return }
@@ -48,7 +50,7 @@ class ProductDetailsViewController: UIViewController {
         let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
 
         productImageView.image = showImage.getImage(imageURLString: imageURLString)
-        
     }
-
+    
+    
 }

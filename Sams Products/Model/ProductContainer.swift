@@ -30,5 +30,6 @@ struct ProductContainer: Decodable {
         self.pageSize = try values.decodeIfPresent(Int.self, forKey: .pageSize) ?? 0
         self.statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode) ?? 0
     }
+   
     
 }
