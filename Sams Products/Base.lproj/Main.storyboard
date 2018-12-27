@@ -150,15 +150,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-h7-LBU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="209" translatesAutoresizingMaskIntoConstraints="NO" id="qhK-Ui-naG">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="209" translatesAutoresizingMaskIntoConstraints="NO" id="qhK-Ui-naG">
                                                 <rect key="frame" x="10" y="10" width="355" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVT-WY-gNj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="50"/>
-                                                        <state key="normal" title="&lt; BACK"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="50"/>
+                                                        <state key="normal" title="&lt; PREVIOUS"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-hS-A3b">
-                                                        <rect key="frame" x="282" y="0.0" width="73" height="50"/>
+                                                        <rect key="frame" x="297.5" y="0.0" width="57.5" height="50"/>
                                                         <state key="normal" title="NEXT &gt;"/>
                                                     </button>
                                                 </subviews>
