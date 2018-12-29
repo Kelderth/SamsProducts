@@ -25,6 +25,7 @@ class ProductListTableViewCell: UITableViewCell {
         self.nameLabel.text = product.productName
         self.ratingLabel.text = "Rating: \(String(format: "%.1f", product.reviewRating))"
         self.inStockLabel.text = product.inStock ? "In stock" : "Not available"
+        self.inStockLabel.textColor = product.inStock ? UIColor.blue : UIColor.red
         self.priceLabel.text = product.price
         
         let imageURLString = NetworkService.shared.urlApiCall + product.productImage

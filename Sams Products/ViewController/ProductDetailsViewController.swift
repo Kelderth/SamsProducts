@@ -69,6 +69,7 @@ class ProductDetailsViewController: UIViewController {
         ratingLabel.text = "Rating: \(String(format: "%.1f", productDetails.reviewRating))"
         reviewCountLabel.text = "Review Count: \(productDetails.reviewCount)"
         inStockLabel.text = productDetails.inStock ? "In Stock" : "Not Available"
+        inStockLabel.textColor = productDetails.inStock ? UIColor.blue : UIColor.red
         priceLabel.text = productDetails.price
         
         let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
