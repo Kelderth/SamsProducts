@@ -17,10 +17,12 @@ struct ProductContainer: Decodable {
     var pageSize: Int
     var statusCode: Int
     
+    // MARK: - CodigKeys
     private enum CodingKeys: CodingKey {
         case products, totalProducts, pageNumber, pageSize, statusCode
     }
     
+    // MARK: - Decoding Safely
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         

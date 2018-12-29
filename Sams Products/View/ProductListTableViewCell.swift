@@ -28,7 +28,7 @@ class ProductListTableViewCell: UITableViewCell {
         self.inStockLabel.textColor = product.inStock ? UIColor.blue : UIColor.red
         self.priceLabel.text = product.price
         
-        let imageURLString = NetworkService.shared.urlApiCall + product.productImage
+        let imageURLString = NetworkService.urlApiCall + product.productImage
         
         showImage.getImage(imageURLString: imageURLString, completion: { productImage in
             self.productImageView.image = productImage

@@ -33,7 +33,6 @@ class ProductListViewController: UIViewController {
     
     //MARK: - Functions
     func updateView() {
-        
         NetworkService.shared.fetchData(pageNumber: self.productPage + 1, pageSize: 10, completion: { productContainer in
             
             guard let productContainer = productContainer else { return }
@@ -41,13 +40,11 @@ class ProductListViewController: UIViewController {
             self.totalProducts = productContainer.totalProducts
             
             if let products = productContainer.products {
-                
                 if self.productPage >= 1 {
                     self.productSource.append(contentsOf: products)
                 } else {
                     self.productSource = products
                 }
-                
                 DispatchQueue.main.async {
                     self.productsTableView.reloadData()
                 }

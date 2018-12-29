@@ -16,7 +16,7 @@ class ProductDetailsViewController: UIViewController {
     let showImage = ImageDownloader()
     var productSource: [Product] = [Product]()
 
-    // MARK: - Outlets
+    // MARK: - Outlets - Data
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var longDescriptionLabel: UILabel!
@@ -26,42 +26,39 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var inStockLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    // MARK: - Outlets - Navigation
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    // MARK: - Outlets - Containers
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productContentView: UIView!
-    @IBOutlet weak var productDetailsHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var detailsStackView: UIStackView!
+    // MARK: - Outlets - Constraints
+    @IBOutlet weak var productDetailsHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        // Product selected from the ProductListViewController.
+        guard let productDetails = product else { return }
+        setupView(productDetails: productDetails)
         
+        // Previous Button is disabled if the first product is being displayed.
         if productIndex == 0 {
             previousButton.isEnabled = false
         }
         
-
-        var contentHeight = (priceLabel.frame.origin.y - view.frame.height)
-        contentHeight = contentHeight * -1
-        
-        productDetailsHeight.constant = contentHeight + detailsStackView.frame.maxY
-        
-
+        // Product detail content height.
+        productDetailsHeight.constant = detailsStackView.frame.maxY + view.frame.height
     }
     
     // MARK: - Functions
-    func setupView() {
-        
-        guard let productDetails = product else { return }
-        
-        feedLabel(productDetails: productDetails)
-    }
-    
-    func feedLabel(productDetails: Product){
-        
+    /**
+     Method that saves the product details within the view labels and return them to the UI.
+     - Parameters:
+        - productDetails: variable of Product type which refers to a produc item from the product source array.
+     */
+    func setupView(productDetails: Product){
         productNameLabel.text = productDetails.productName
         longDescriptionLabel.text = productDetails.longDescription.htmlToString
         shortDescriptionLabel.text = productDetails.shortDescription.htmlToString
@@ -72,15 +69,16 @@ class ProductDetailsViewController: UIViewController {
         inStockLabel.textColor = productDetails.inStock ? UIColor.blue : UIColor.red
         priceLabel.text = productDetails.price
         
-        let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
+        let imageURLString = NetworkService.urlApiCall + productDetails.productImage
         
         showImage.getImage(imageURLString: imageURLString, completion: { productImage in
             self.productImageView.image = productImage
         })
     }
     
+    // MARK: - Actions
+    // When NEXT button is tapped.
     @IBAction func nextProduct(_ sender: UIButton) {
-        
         scrollView.setContentOffset(CGPoint.zero, animated: true)
         
         if productIndex >= productSource.count - 1 {
@@ -93,11 +91,10 @@ class ProductDetailsViewController: UIViewController {
             
         let itemSource = productSource[productIndex]
             
-        feedLabel(productDetails: itemSource)
+        setupView(productDetails: itemSource)
     }
-    
+    // When PREVIOUS button is tapped.
     @IBAction func previousProduct(_ sender: UIButton) {
-        
         scrollView.setContentOffset(CGPoint.zero, animated: true)
 
         nextButton.isEnabled = true
@@ -106,13 +103,12 @@ class ProductDetailsViewController: UIViewController {
         
         let itemSource = productSource[productIndex]
         
-        feedLabel(productDetails: itemSource)
+        setupView(productDetails: itemSource)
         
         if productIndex == 0 {
             previousButton.isEnabled = false
             return
         }
-
     }
     
     

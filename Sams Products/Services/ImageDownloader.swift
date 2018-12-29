@@ -12,6 +12,13 @@ class ImageDownloader {
     
     var imageReturned: UIImage?
     
+    /**
+     Method that saves or loads images from the cache.
+     - Parameters:
+        - imageURLString: The image URL
+        - completion: Closure that returns an UIImage instance to use after in the main thread
+     */
+    
     func getImage(imageURLString: String, completion: @escaping (UIImage)->()) {
         if let image = ImageCache.shared.getAssetImageFromCache(identifier: imageURLString) {
             completion(image)
