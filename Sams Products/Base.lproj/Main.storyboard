@@ -197,7 +197,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rp1-o5-Ozb">
-                                                <rect key="frame" x="20" y="300" width="335" height="159.5"/>
+                                                <rect key="frame" x="20" y="300" width="335" height="156"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27l-m5-HJ6">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
@@ -236,17 +236,17 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fbq-bB-nip">
-                                                        <rect key="frame" x="0.0" y="117.5" width="335" height="42"/>
+                                                        <rect key="frame" x="0.0" y="117.5" width="335" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-bz-OKK">
-                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="42"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="38.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <color key="textColor" red="0.092628314119999999" green="0.25775606379999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8n-xv-Icj">
-                                                                <rect key="frame" x="170" y="0.0" width="165" height="42"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                                                <rect key="frame" x="170" y="0.0" width="165" height="38.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
