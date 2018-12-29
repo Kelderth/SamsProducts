@@ -21,7 +21,7 @@ class ImageDownloader {
                     guard let data = data else { return }
                         
                     if let image = UIImage(data: data) {
-                        DispatchQueue.global().async {
+                        DispatchQueue.global(qos: .background).async {
                             // some work here
                             ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
                             
