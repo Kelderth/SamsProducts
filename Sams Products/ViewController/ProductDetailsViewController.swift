@@ -29,6 +29,10 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var productContentView: UIView!
+    @IBOutlet weak var productDetailsHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var detailsStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,14 @@ class ProductDetailsViewController: UIViewController {
         if productIndex == 0 {
             previousButton.isEnabled = false
         }
+        
+
+        var contentHeight = (priceLabel.frame.origin.y - view.frame.height)
+        contentHeight = contentHeight * -1
+        
+        productDetailsHeight.constant = contentHeight + detailsStackView.frame.maxY
+        
+
     }
     
     // MARK: - Functions

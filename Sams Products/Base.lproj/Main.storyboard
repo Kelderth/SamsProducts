@@ -141,7 +141,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProductDetails" id="GDZ-y8-xlD" customClass="ProductDetailsViewController" customModule="Sams_Products" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KYy-Bg-D1a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="qhK-Ui-naG">
@@ -176,7 +176,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q9-mC-USF">
-                                <rect key="frame" x="0.0" y="116" width="375" height="1284"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-h7-LBU">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
@@ -261,9 +261,9 @@
                                             <constraint firstItem="y8Y-KK-tqK" firstAttribute="leading" secondItem="Y6s-h7-LBU" secondAttribute="leading" id="2Bt-GY-I2a"/>
                                             <constraint firstAttribute="trailing" secondItem="CtD-2z-sgx" secondAttribute="trailing" constant="10" id="FBq-IC-HSV"/>
                                             <constraint firstItem="CtD-2z-sgx" firstAttribute="top" secondItem="y8Y-KK-tqK" secondAttribute="bottom" constant="10" id="SNu-DT-Hpq"/>
+                                            <constraint firstAttribute="height" constant="1400" identifier="ProductDetailContainerHight" id="ZRo-AA-K6D"/>
                                             <constraint firstItem="Rp1-o5-Ozb" firstAttribute="leading" secondItem="Y6s-h7-LBU" secondAttribute="leading" constant="20" id="avr-4k-H0k"/>
                                             <constraint firstItem="Rp1-o5-Ozb" firstAttribute="top" secondItem="CtD-2z-sgx" secondAttribute="bottom" constant="10" id="bdg-8d-YRU"/>
-                                            <constraint firstAttribute="height" constant="1400" id="et3-jT-vYf"/>
                                             <constraint firstItem="y8Y-KK-tqK" firstAttribute="top" secondItem="Y6s-h7-LBU" secondAttribute="top" id="jws-Ba-bsT"/>
                                             <constraint firstAttribute="trailing" secondItem="y8Y-KK-tqK" secondAttribute="trailing" id="oM7-E3-kcT"/>
                                             <constraint firstAttribute="trailing" secondItem="Rp1-o5-Ozb" secondAttribute="trailing" constant="20" id="yOe-DS-x93"/>
@@ -286,21 +286,23 @@
                             <constraint firstItem="Li8-Vh-yuw" firstAttribute="trailing" secondItem="HEc-3r-yaY" secondAttribute="trailing" id="HWF-hh-LAr"/>
                             <constraint firstItem="0q9-mC-USF" firstAttribute="top" secondItem="HEc-3r-yaY" secondAttribute="bottom" id="KiO-zM-uEa"/>
                             <constraint firstItem="0q9-mC-USF" firstAttribute="leading" secondItem="Li8-Vh-yuw" secondAttribute="leading" id="W4Z-cy-ugd"/>
+                            <constraint firstItem="Y6s-h7-LBU" firstAttribute="width" secondItem="KYy-Bg-D1a" secondAttribute="width" id="W4h-OH-eTQ"/>
                             <constraint firstItem="qhK-Ui-naG" firstAttribute="leading" secondItem="Li8-Vh-yuw" secondAttribute="leading" id="ZFA-Yc-DpJ"/>
                             <constraint firstItem="Li8-Vh-yuw" firstAttribute="bottom" secondItem="0q9-mC-USF" secondAttribute="bottom" id="e2t-9j-GM5"/>
                             <constraint firstItem="HEc-3r-yaY" firstAttribute="top" secondItem="qhK-Ui-naG" secondAttribute="bottom" id="hDf-mc-0cx"/>
-                            <constraint firstItem="Y6s-h7-LBU" firstAttribute="width" secondItem="KYy-Bg-D1a" secondAttribute="width" id="iWH-7H-aLx"/>
                             <constraint firstItem="qhK-Ui-naG" firstAttribute="top" secondItem="Li8-Vh-yuw" secondAttribute="top" id="w6Z-IH-tJF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Li8-Vh-yuw"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
+                        <outlet property="detailsStackView" destination="Rp1-o5-Ozb" id="eqd-gq-2OO"/>
                         <outlet property="inStockLabel" destination="yhg-bz-OKK" id="pm6-iJ-G2G"/>
                         <outlet property="longDescriptionLabel" destination="DAJ-0D-21e" id="ikl-y7-nBC"/>
                         <outlet property="nextButton" destination="dIF-hS-A3b" id="8GU-mA-bFQ"/>
                         <outlet property="previousButton" destination="uVT-WY-gNj" id="cSS-Pa-9gr"/>
                         <outlet property="priceLabel" destination="c8n-xv-Icj" id="xMh-yj-upp"/>
+                        <outlet property="productContentView" destination="Y6s-h7-LBU" id="TRP-DU-Wks"/>
+                        <outlet property="productDetailsHeight" destination="ZRo-AA-K6D" id="fcv-eG-PCG"/>
                         <outlet property="productIdLabel" destination="Yqe-7V-o2a" id="JDZ-11-zmt"/>
                         <outlet property="productImageView" destination="CtD-2z-sgx" id="wZF-pq-VfM"/>
                         <outlet property="productNameLabel" destination="y8Y-KK-tqK" id="CHm-2L-Aso"/>
