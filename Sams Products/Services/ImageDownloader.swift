@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowImage {
+class ImageDownloader {
     
     var imageReturned: UIImage?
     

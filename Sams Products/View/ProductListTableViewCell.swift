@@ -11,7 +11,7 @@ import UIKit
 class ProductListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    let showImage = ShowImage()
+    let showImage = ImageDownloader()
 
     // MARK: - Outlets
     @IBOutlet weak var productImageView: UIImageView!

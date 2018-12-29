@@ -13,7 +13,7 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Properties
     var product: Product?
     var productIndex: Int = 0
-    let showImage = ShowImage()
+    let showImage = ImageDownloader()
     var productSource: [Product] = [Product]()
 
     // MARK: - Outlets
@@ -33,6 +33,10 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+        if productIndex == 0 {
+            previousButton.isEnabled = false
+        }
     }
     
     // MARK: - Functions
@@ -77,12 +81,7 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func previousProduct(_ sender: UIButton) {
-        
-        if productIndex <= 0 {
-            previousButton.isEnabled = false
-            return
-        }
-        
+
         nextButton.isEnabled = true
         
         productIndex -= 1
@@ -90,6 +89,12 @@ class ProductDetailsViewController: UIViewController {
         let itemSource = productSource[productIndex]
         
         feedLabel(productDetails: itemSource)
+        
+        if productIndex == 0 {
+            previousButton.isEnabled = false
+            return
+        }
+
     }
     
     
