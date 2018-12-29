@@ -12,28 +12,29 @@ class ShowImage {
     
     var imageReturned: UIImage?
     
-    func getImage(imageURLString: String) -> UIImage? {
+    func getImage(imageURLString: String, completion: @escaping (UIImage)->()) {
         if let image = ImageCache.shared.getAssetImageFromCache(identifier: imageURLString) {
-            self.imageReturned = image
-            return imageReturned!
+            completion(image)
         } else {
-            do {
-                if let imageURL = URL(string: imageURLString) {
-                    let imageData = try Data(contentsOf: imageURL)
-                    
-                    if let image = UIImage(data: imageData) {
-                        ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
-                        DispatchQueue.main.async {
-                            self.imageReturned = image
+            if let imageURL = URL(string: imageURLString) {
+                URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, response, error) in
+                    guard let data = data else { return }
+                        
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.global().async {
+                            // some work here
+                            ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
+                            
+                            // later, in this same dispatch,
+                            DispatchQueue.main.async {
+                                // dispatch some work to the main thread
+                                completion(image)
+                            }
                         }
                     }
-                }
-            } catch let error {
-                print("Error fetching image - \(error.localizedDescription)")
-                NSLog("Error fetching image - \(error.localizedDescription)")
+                }).resume()
             }
         }
-        return nil
     }
     
     

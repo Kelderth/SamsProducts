@@ -29,7 +29,9 @@ class ProductListTableViewCell: UITableViewCell {
         
         let imageURLString = NetworkService.shared.urlApiCall + product.productImage
         
-        productImageView.image = showImage.getImage(imageURLString: imageURLString)
+        showImage.getImage(imageURLString: imageURLString, completion: { productImage in
+            self.productImageView.image = productImage
+        })
     }
     
 

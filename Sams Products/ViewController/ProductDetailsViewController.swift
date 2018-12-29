@@ -56,7 +56,9 @@ class ProductDetailsViewController: UIViewController {
         
         let imageURLString = NetworkService.shared.urlApiCall + productDetails.productImage
         
-        productImageView.image = showImage.getImage(imageURLString: imageURLString)
+        showImage.getImage(imageURLString: imageURLString, completion: { productImage in
+            self.productImageView.image = productImage
+        })
     }
     
     @IBAction func nextProduct(_ sender: UIButton) {
