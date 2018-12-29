@@ -28,6 +28,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,8 @@ class ProductDetailsViewController: UIViewController {
     
     @IBAction func nextProduct(_ sender: UIButton) {
         
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
+        
         if productIndex >= productSource.count - 1 {
             nextButton.isEnabled = false
             return
@@ -81,6 +84,8 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func previousProduct(_ sender: UIButton) {
+        
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
 
         nextButton.isEnabled = true
         
