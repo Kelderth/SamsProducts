@@ -28,7 +28,6 @@ class ProductListViewController: UIViewController {
         productsTableView.dataSource = self
         
         updateView()
-        
     }
     
     //MARK: - Functions
@@ -76,7 +75,6 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == productSource.count - 1 && productSource.count % 10 == 0 && productSource.count < totalProducts {
 
             updateView()
-            
         }
     }
     

@@ -18,7 +18,6 @@ class ImageDownloader {
         - imageURLString: The image URL
         - completion: Closure that returns an UIImage instance to use after in the main thread
      */
-    
     func getImage(imageURLString: String, completion: @escaping (UIImage)->()) {
         if let image = ImageCache.shared.getAssetImageFromCache(identifier: imageURLString) {
             completion(image)
@@ -28,11 +27,11 @@ class ImageDownloader {
                     guard let data = data else { return }
                         
                     if let image = UIImage(data: data) {
-                            ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
+                        ImageCache.shared.saveAssetImageToCache(identifier: imageURLString, image: image)
                             
-                            DispatchQueue.main.async {
-                                completion(image)
-                            }
+                        DispatchQueue.main.async {
+                            completion(image)
+                        }
                     }
                 }).resume()
             }

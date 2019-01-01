@@ -29,6 +29,9 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Outlets - Navigation
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var currentIndexLabel: UILabel!
+    @IBOutlet weak var ofLabel: UILabel!
+    @IBOutlet weak var totalIndexLabel: UILabel!
     // MARK: - Outlets - Containers
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productContentView: UIView!
@@ -50,6 +53,9 @@ class ProductDetailsViewController: UIViewController {
         
         // Product detail content height.
         productDetailsHeight.constant = detailsStackView.frame.maxY + view.frame.height
+        
+        // Index Navigation Initialization.
+        indexNavigationUpdate()
     }
     
     // MARK: - Functions
@@ -76,6 +82,12 @@ class ProductDetailsViewController: UIViewController {
         })
     }
     
+    /// Index Navigation
+    func indexNavigationUpdate() {
+        currentIndexLabel.text = productIndex == 0 ? "1" : "\(productIndex + 1)"
+        totalIndexLabel.text = "\(productSource.count)"
+    }
+    
     // MARK: - Actions
     // When NEXT button is tapped.
     @IBAction func nextProduct(_ sender: UIButton) {
@@ -92,6 +104,8 @@ class ProductDetailsViewController: UIViewController {
         let itemSource = productSource[productIndex]
             
         setupView(productDetails: itemSource)
+        
+        indexNavigationUpdate()
     }
     // When PREVIOUS button is tapped.
     @IBAction func previousProduct(_ sender: UIButton) {
@@ -107,8 +121,10 @@ class ProductDetailsViewController: UIViewController {
         
         if productIndex == 0 {
             previousButton.isEnabled = false
+            indexNavigationUpdate()
             return
         }
+        indexNavigationUpdate()
     }
     
     
