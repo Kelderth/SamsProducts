@@ -20,6 +20,9 @@
 		04ECB53C21D12BE4003A6448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53B21D12BE4003A6448 /* Assets.xcassets */; };
 		04ECB53F21D12BE4003A6448 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECB53D21D12BE4003A6448 /* LaunchScreen.storyboard */; };
 		04F5E41B21D46DEF0022712D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5E41A21D46DEF0022712D /* ImageDownloader.swift */; };
+		3F0F7F1321DD617600E65E00 /* ProductDetailsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F7F1221DD617600E65E00 /* ProductDetailsContainerViewController.swift */; };
+		3F0F7F1521DD696B00E65E00 /* ProductDetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F7F1421DD696B00E65E00 /* ProductDetailsPageViewController.swift */; };
+		3F0F7F1821DD6A0F00E65E00 /* ProductDetailsPageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F7F1721DD6A0F00E65E00 /* ProductDetailsPageViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		04ECB53E21D12BE4003A6448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04ECB54021D12BE4003A6448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F5E41A21D46DEF0022712D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		3F0F7F1221DD617600E65E00 /* ProductDetailsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsContainerViewController.swift; sourceTree = "<group>"; };
+		3F0F7F1421DD696B00E65E00 /* ProductDetailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPageViewController.swift; sourceTree = "<group>"; };
+		3F0F7F1721DD6A0F00E65E00 /* ProductDetailsPageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsPageViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 			children = (
 				04ECB53621D12BE0003A6448 /* ProductListViewController.swift */,
 				049FCB6521D175400061CA4F /* ProductDetailsViewController.swift */,
+				3F0F7F1221DD617600E65E00 /* ProductDetailsContainerViewController.swift */,
+				3F0F7F1421DD696B00E65E00 /* ProductDetailsPageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 		04ECB53321D12BE0003A6448 /* Sams Products */ = {
 			isa = PBXGroup;
 			children = (
+				3F0F7F1621DD69F900E65E00 /* Protocols */,
 				04090F3B21D2C1CF00BBE7DE /* Services */,
 				049FCB6C21D2B89D0061CA4F /* View */,
 				049FCB6721D1948B0061CA4F /* Model */,
@@ -118,6 +127,14 @@
 				04ECB54021D12BE4003A6448 /* Info.plist */,
 			);
 			path = "Sams Products";
+			sourceTree = "<group>";
+		};
+		3F0F7F1621DD69F900E65E00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F7F1721DD6A0F00E65E00 /* ProductDetailsPageViewDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +212,10 @@
 				049FCB6921D195840061CA4F /* ProductContainer.swift in Sources */,
 				04090F3F21D2FC8A00BBE7DE /* HtmlToSwiftExtension.swift in Sources */,
 				04090F4121D32E9B00BBE7DE /* ImageCache.swift in Sources */,
+				3F0F7F1521DD696B00E65E00 /* ProductDetailsPageViewController.swift in Sources */,
 				049FCB6B21D197590061CA4F /* Product.swift in Sources */,
+				3F0F7F1321DD617600E65E00 /* ProductDetailsContainerViewController.swift in Sources */,
+				3F0F7F1821DD6A0F00E65E00 /* ProductDetailsPageViewDelegate.swift in Sources */,
 				04ECB53721D12BE0003A6448 /* ProductListViewController.swift in Sources */,
 				04F5E41B21D46DEF0022712D /* ImageDownloader.swift in Sources */,
 				04ECB53521D12BE0003A6448 /* AppDelegate.swift in Sources */,
