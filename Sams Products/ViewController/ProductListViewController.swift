@@ -80,16 +80,15 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vcIdentifier = "ProductDetails"
+        let vcIdentifier = "ProductDetailsContainer"
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        guard let destination = storyboard.instantiateViewController(withIdentifier: vcIdentifier) as? ProductDetailsViewController else { return }
+        guard let destination = storyboard.instantiateViewController(withIdentifier: vcIdentifier) as? ProductDetailsContainerViewController else { return }
         
-        guard let productSelected = tableView.indexPathForSelectedRow?.row else { return }
-                
-        destination.product = productSource[productSelected]
+        let productSelected = indexPath.row
+        
         destination.productIndex = productSelected
-        destination.productSource = productSource
+        destination.productSource = self.productSource
         
         navigationController?.pushViewController(destination, animated: true)
     }
