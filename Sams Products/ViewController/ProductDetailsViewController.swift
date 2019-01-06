@@ -51,9 +51,6 @@ class ProductDetailsViewController: UIViewController {
             previousButton.isEnabled = false
         }
         
-        // Product detail content height.
-        productDetailsHeight.constant = detailsStackView.frame.maxY + view.frame.height
-        
         // Index Navigation Initialization.
         indexNavigationUpdate()
     }
@@ -80,6 +77,10 @@ class ProductDetailsViewController: UIViewController {
         showImage.getImage(imageURLString: imageURLString, completion: { productImage in
             self.productImageView.image = productImage
         })
+        
+        self.updateViewConstraints()
+        
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
     }
     
     /// Index Navigation
@@ -91,7 +92,6 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Actions
     // When NEXT button is tapped.
     @IBAction func nextProduct(_ sender: UIButton) {
-        scrollView.setContentOffset(CGPoint.zero, animated: true)
         
         if productIndex >= productSource.count - 1 {
             nextButton.isEnabled = false
@@ -109,7 +109,6 @@ class ProductDetailsViewController: UIViewController {
     }
     // When PREVIOUS button is tapped.
     @IBAction func previousProduct(_ sender: UIButton) {
-        scrollView.setContentOffset(CGPoint.zero, animated: true)
 
         nextButton.isEnabled = true
         

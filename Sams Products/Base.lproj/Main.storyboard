@@ -179,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="511"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-h7-LBU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CtD-2z-sgx">
                                                 <rect key="frame" x="10" y="90" width="355" height="200"/>
@@ -261,9 +261,9 @@
                                             <constraint firstItem="y8Y-KK-tqK" firstAttribute="leading" secondItem="Y6s-h7-LBU" secondAttribute="leading" id="2Bt-GY-I2a"/>
                                             <constraint firstAttribute="trailing" secondItem="CtD-2z-sgx" secondAttribute="trailing" constant="10" id="FBq-IC-HSV"/>
                                             <constraint firstItem="CtD-2z-sgx" firstAttribute="top" secondItem="y8Y-KK-tqK" secondAttribute="bottom" constant="10" id="SNu-DT-Hpq"/>
-                                            <constraint firstAttribute="height" constant="1400" identifier="ProductDetailContainerHight" id="ZRo-AA-K6D"/>
                                             <constraint firstItem="Rp1-o5-Ozb" firstAttribute="leading" secondItem="Y6s-h7-LBU" secondAttribute="leading" constant="20" id="avr-4k-H0k"/>
                                             <constraint firstItem="Rp1-o5-Ozb" firstAttribute="top" secondItem="CtD-2z-sgx" secondAttribute="bottom" constant="10" id="bdg-8d-YRU"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rp1-o5-Ozb" secondAttribute="bottom" constant="20" id="iZJ-rW-zZO"/>
                                             <constraint firstItem="y8Y-KK-tqK" firstAttribute="top" secondItem="Y6s-h7-LBU" secondAttribute="top" id="jws-Ba-bsT"/>
                                             <constraint firstAttribute="trailing" secondItem="y8Y-KK-tqK" secondAttribute="trailing" id="oM7-E3-kcT"/>
                                             <constraint firstAttribute="trailing" secondItem="Rp1-o5-Ozb" secondAttribute="trailing" constant="20" id="yOe-DS-x93"/>
@@ -271,6 +271,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Y6s-h7-LBU" firstAttribute="height" secondItem="0q9-mC-USF" secondAttribute="height" priority="250" id="6yi-sE-wVf"/>
                                     <constraint firstAttribute="bottom" secondItem="Y6s-h7-LBU" secondAttribute="bottom" id="CUd-rn-rwY"/>
                                     <constraint firstItem="Y6s-h7-LBU" firstAttribute="top" secondItem="0q9-mC-USF" secondAttribute="top" id="Y2g-QG-tnj"/>
                                     <constraint firstAttribute="trailing" secondItem="Y6s-h7-LBU" secondAttribute="trailing" id="c9f-GE-xJf"/>
@@ -337,7 +338,6 @@
                         <outlet property="previousButton" destination="uVT-WY-gNj" id="cSS-Pa-9gr"/>
                         <outlet property="priceLabel" destination="c8n-xv-Icj" id="xMh-yj-upp"/>
                         <outlet property="productContentView" destination="Y6s-h7-LBU" id="TRP-DU-Wks"/>
-                        <outlet property="productDetailsHeight" destination="ZRo-AA-K6D" id="fcv-eG-PCG"/>
                         <outlet property="productIdLabel" destination="Yqe-7V-o2a" id="JDZ-11-zmt"/>
                         <outlet property="productImageView" destination="CtD-2z-sgx" id="wZF-pq-VfM"/>
                         <outlet property="productNameLabel" destination="y8Y-KK-tqK" id="CHm-2L-Aso"/>
